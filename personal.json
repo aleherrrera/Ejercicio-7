@@ -1,0 +1,119 @@
+{
+    "__class__": "ListaAgentes",
+    "Agentes": [
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": 20358525092,
+                "apellido": "silva",
+                "nombre": "osvaldo",
+                "basico": 10000.0,
+                "antiguedad": 3,
+                "clases": 4,
+                "cargo": "simple",
+                "catedra": "informatica"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": 27301416712,
+                "apellido": "ruiz",
+                "nombre": "paola",
+                "basico": 12000.0,
+                "antiguedad": 3,
+                "clases": 3,
+                "cargo": "exclusivo",
+                "catedra": "informatica",
+                "area": "sistemas",
+                "tipo": "aplicada",
+                "categoriaInv": "I",
+                "importeD": 6000.0,
+                "importeI": 4000.0
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": 27181597382,
+                "apellido": "perez",
+                "nombre": "omar",
+                "basico": 12000.0,
+                "antiguedad": 3,
+                "area": "sistemas",
+                "tipo": "aplicada"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": 22341786521,
+                "apellido": "gonzalez",
+                "nombre": "favio",
+                "basico": 10000.0,
+                "antiguedad": 2,
+                "clases": 2,
+                "cargo": "semiexclusivo",
+                "catedra": "geologia",
+                "area": "administrativa",
+                "tipo": "aplicada",
+                "categoriaInv": "I",
+                "importeD": 5000.0,
+                "importeI": 4000.0
+            }
+        },
+        {
+            "__class__": "Apoyo",
+            "__atributos__": {
+                "cuil": 20271897441,
+                "apellido": "martinez",
+                "nombre": "estela",
+                "basico": 12000.0,
+                "antiguedad": 5,
+                "categoria": 5
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": 20221374821,
+                "apellido": "gallo",
+                "nombre": "enzo",
+                "basico": 11000.0,
+                "antiguedad": 6,
+                "area": "sistemas",
+                "tipo": "teorica"
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": 2215971621,
+                "apellido": "fernandez",
+                "nombre": "raul",
+                "basico": 12000.0,
+                "antiguedad": 4,
+                "area": "administrativa",
+                "tipo": "teorica"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": 27190027452,
+                "apellido": "tejada",
+                "nombre": "luis",
+                "basico": 11000.0,
+                "antiguedad": 3,
+                "clases": 1,
+                "cargo": "simple",
+                "catedra": "geologia",
+                "area": "administrativa",
+                "tipo": "teorica",
+                "categoriaInv": "II",
+                "importeD": 4000.0,
+                "importeI": 6000.0
+            }
+        }
+    ]
+}
