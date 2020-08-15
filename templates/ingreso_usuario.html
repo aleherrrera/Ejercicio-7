@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+       </head>
+        <h1>Iniciar Sesion</h1>
+   <hr>
+      <form action = "{{ request.path }}" method = "post" class= "container">
+         <label for = "dni">DNI</label><br>
+         <input type = "number" name = "dni" placeholder = "dni" /><br>
+          <label for = "password">Ingrese su contraseña</label><br>
+         <input type = "password" name = "password" placeholder = "password"/><br>
+        
+		 <br>
+         <input type = "submit" value = "Iniciar sesion" />
+	 
+      </form>	  
+</html>

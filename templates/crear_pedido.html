@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title>Crear Pedido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+       </head>
+        <h1>Pedido</h1>
+   <hr>
+      <form action = "{{ request.path }}" method = "post" class= "container">
+         <label for = "mesa">Mesa</label><br>
+         <input type = "number" name = "mesa" placeholder = "Numero de mesa" /><br>
+
+		 <br>
+         <input type = "submit" value = "Buscar" />
+          <div class="myDiv">
+			<br><br><a href = "{{ url_for('funciones_mozo') }}" > Atras </a><br><br>
+	  </div>
+      </form>
+</html>

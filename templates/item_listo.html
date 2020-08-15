@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title>Pedidos Pendientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    </head>
+   <body>
+	 <h1> Pedidos Pendientes </h1>
+     <hr/>
+       <div class="container">
+          <table>
+            {% for pedido in pedidos %}
+              <thead>
+                <h2>Pedido N°{{pedido}}</h2>
+              </thead>
+               <table>
+                 <thead>
+                    <tr>
+                       <th>Producto</th>
+                       <th>Estado</th>
+                       <th>Observacion</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                   <form action = "{{ url_for('item_listo') }}" method = "post" class = "container">
+                       {% for item in items %}
+                            {%if item.pedidos.NumPedido == pedido%}
+                               {%if item.Estado == 'Pendiente'%}
+                                <tr>
+                                   <input id="item" name="item" type="hidden" value="{{item.NumItem}}">
+                                   <td>{{ item.productos.Nombre }}</td>
+                                   <td>{{ item.Estado }}</td>
+                                   <td>{{item.pedidos.Observacion}}</td>
+                                   <td><input type = "submit" value = "Item Listo" /></td>
+                                </tr>
+                                {%endif%}
+                            {%endif%}
+                       {% endfor %}
+                    </form>
+                 </tbody>
+                </table>
+            </tbody>
+            {%endfor%}
+          </table>
+       <br><br>
+      </div>
+   </body>
+      <div class="myDiv">
+            <br><br><a href = "{{ url_for('funciones_cocinero') }}" > Atras </a><br><br>
+	  </div>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+       <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+       </head>
+ <h1>MENU </h1>
+      <hr/>
+   <div class="container">
+      <table>
+         <thead>
+            <tr>
+               <th>Producto</th>
+               <th>Precio</th>
+            </tr>
+         </thead>
+
+         <tbody>
+              <form action = "{{ url_for('menu') }}" method = "post" class = "container">
+                    {% for producto in productos %}
+                        <tr>
+                        <input id="mesa" name="mesa" type="hidden" value={{mesa}}>
+                        <td><input id= 'producto' name= 'producto' class="button"
+                                   type="submit" value='{{producto.Nombre}}'</td>
+                        <td>${{ producto.PrecioUnitario }}</td>
+                        </tr>
+                    {% endfor %}
+              </form>
+         </tbody>
+      </table>
+    <br><br>
+   </div>
+
+    <hr/>
+   <h1>Pedido Mesa N°{{mesa}}</h1>
+      <hr/>
+        <div class="container">
+      <table>
+
+         <thead>
+            <tr>
+               <th>Producto</th>
+            </tr>
+         </thead>
+
+         <tbody>
+             {% if items != None:%}
+               {% for item in items %}
+               <tr>
+                   <td>{{ item.productos.Nombre }}</td>
+               </tr>
+               {% endfor %}
+             {%endif%}
+         </tbody>
+      </table>
+
+      <hr/>
+      <table>
+        <form action = "{{ url_for('cerrar_pedido') }}" method = "post" class = "container">
+             <label for = "observacion">Escribe la observacion</label><br>
+             <textarea name = "observacion" placeholder = "Observacion" cols="50" rows="8"></textarea><br><br>
+             <input id="pedido" name="pedido" type="hidden" value="{{pedido.NumPedido}}">
+             <hr/>
+             <input type = "submit" value = "Cerrar Pedido" />
+        </form>
+      </tbody>
+      </table>
+      </div>
+
+      <div class="myDiv">
+            <br><br><a href = "{{ url_for('funciones_mozo') }}" > Atras </a><br><br>
+	  </div>
+</html>

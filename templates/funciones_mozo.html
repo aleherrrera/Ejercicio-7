@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title>Funciones Mozo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+  </head>
+   <body>
+	 <h1> Funciones Mozo</h1>
+	    <hr>
+    <ul>
+	    <li> <a href = "{{ url_for('crear_pedido') }}"> Crear Pedido</a></li><br>
+    	<li> <a href = "{{ url_for('listar_pedidos_vigentes') }}"> Pedidos Vigentes</a></li><br>
+	</ul>
+   <div class="myDiv">
+			<br><br><a href = "{{ url_for('ingreso_usuario') }}" > Inicio </a><br><br>
+	  </div>
+   </body>
+</html>

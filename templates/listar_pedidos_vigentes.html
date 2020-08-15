@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <body>
+        <h1>Pedidos Vigentes</h1>
+        <hr>
+        <div class="container">
+          <table>
+            {% for pedido in pedidos %}
+             <thead>
+                <tr>
+                   <th>Pedido</th>
+                   <th>Mesa</th>
+                   <th>Mozo</th>
+                </tr>
+             </thead>
+
+             <tbody>
+             <form action = "{{ url_for('registrar_cobro') }}" method = "post" class = "container">
+                    <tr>
+                    <input id="pedido" name="pedido" type="hidden"value="{{pedido.NumPedido}}">
+                    <td>{{pedido.NumPedido}}</td>
+                    <td>{{pedido.Mesa}}</td>
+                    <td>{{pedido.DNIMozo}}</td>
+                    <td><input type="submit" value="Cobrar"></td>
+                    </tr>
+             </form>
+                <table>
+                 <thead>
+                    <tr>
+                       <th>Items del pedido</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                   {% for item in items %}
+                        {%if item.pedidos.NumPedido == pedido.NumPedido%}
+                            <tr>
+                               <td>{{ item.productos.Nombre }}</td>
+                            </tr>
+                        {%endif%}
+                   {% endfor %}
+                 {%endfor%}
+                 </tbody>
+             </table>
+        </tbody>
+        </table>
+        <br><br>
+        </div>
+
+      <div class="myDiv">
+            <br><br><a href = "{{ url_for('funciones_mozo') }}" > Atras </a><br><br>
+      </div>
+    </body>
+</html>
